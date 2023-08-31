@@ -13,8 +13,7 @@ import static com.codeborne.selenide.Selenide.$x;
  */
 
 public class MainPage {
-    private final SelenideElement textBoxInput = $x("//input[@id=\"search_form_input_homepage\"]");
-    private final SelenideElement searchButton = $x("//input[@id=\"search_button_homepage\"]");
+    private final SelenideElement textBoxInput = $x("//input[@id='search_form_input_homepage']");
     private final ElementsCollection titles = $$x("//div//h2//a//span");
 
     public MainPage(String url){
@@ -27,12 +26,12 @@ public class MainPage {
      */
     public void search(String searchString){
         textBoxInput.setValue(searchString);
-        searchButton.click();
+        textBoxInput.pressEnter();
     }
 
     public void getTitles(){
         List<String> names = new ArrayList<>();
-        titles.forEach(x->names.add(x.getDomProperty("outerText")));
+        titles.forEach(x->names.add(x.text()));
         System.out.println(names);
     }
 }
