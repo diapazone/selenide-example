@@ -29,9 +29,11 @@ public class MainPage {
         textBoxInput.pressEnter();
     }
 
-    public void getTitles(){
+    public List<String> getTitles(){
         List<String> names = new ArrayList<>();
-        titles.forEach(x->names.add(x.text()));
-        System.out.println(names);
+        for (SelenideElement x : titles) {
+            names.add(x.text());
+        }
+        return names;
     }
 }
