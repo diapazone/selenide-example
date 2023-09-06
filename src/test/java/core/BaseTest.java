@@ -1,3 +1,5 @@
+package core;
+
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,6 +14,7 @@ abstract public class BaseTest {
         Configuration.driverManagerEnabled = true;
         Configuration.browserSize = "1920x1080";
         Configuration.headless = false;
+        Configuration.timeout = 5000;
     }
 
     @Before
