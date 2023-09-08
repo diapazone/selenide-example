@@ -59,8 +59,8 @@ public class PetrovichPage {
     }
 
     public void clickButton(){
-        button.scrollTo();
+        button.scrollIntoView("{block: \"center\"}");
         Selenide.actions().moveToElement(button).click().perform();
-        button.shouldHave(Condition.attribute("href", "/cart/"), Duration.ofSeconds(15));
+        button.shouldHave(Condition.text("В корзине"), Duration.ofSeconds(15));
     }
 }
