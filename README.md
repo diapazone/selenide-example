@@ -1,2 +1,1 @@
-# learning.selenide
- my first selenide experience
+some examples of autotests using Java and Selenide
